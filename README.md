@@ -15,7 +15,7 @@ script.js       공용 스크립트
 ## 1. 깃허브 배포 (GitHub Pages)
 1. https://github.com 가입 → 우측 상단 **+ → New repository**
 2. 저장소 이름 입력 (예: `edusolution`) → Public 선택 → Create
-3. **uploading an existing file** 클릭 → 이 폴더의 파일 8개를 전부 드래그해서 업로드 → Commit changes
+3. **uploading an existing file** 클릭 → 이 폴더의 파일 9개(README 포함)를 전부 드래그해서 업로드 → Commit changes
 4. 저장소 **Settings → Pages** 메뉴
 5. Branch를 `main` / `(root)` 로 선택 → Save
 6. 1~2분 뒤 `https://아이디.github.io/edusolution/` 접속 확인
