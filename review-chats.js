@@ -148,6 +148,7 @@ const REVIEW_CHATS = {
       note.textContent = '※ 실제 상담 흐름을 바탕으로 재구성한 예시 대화입니다.';
     } else return;
     body.scrollTop = 0;
+    if (typeof gtag === 'function') gtag('event', 'review_chat_open', { review: card.dataset.chat || 'kakao_capture' });
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
   };

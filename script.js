@@ -30,3 +30,18 @@ quick.innerHTML = '<a class="qc-kakao" href="' + KAKAO_URL + '" target="_blank" 
   + '<a class="qc-apply" href="contact.html" aria-label="무료 상담 신청">'
   + '<span class="qc-ico">' + ICON_PEN + '</span><span class="qc-txt">무료 상담 신청</span></a>';
 document.body.appendChild(quick);
+
+// 방문자 분석 이벤트 (GA4) — 카톡·상담신청·유튜브 버튼 클릭 집계
+const track = (name, params) => { if (typeof gtag === 'function') gtag('event', name, params || {}); };
+document.addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+  const where = a.closest('.quick-cta') ? 'floating_button'
+    : a.closest('.site-header') ? 'header'
+    : a.closest('.site-footer') ? 'footer'
+    : 'page';
+  if (href.includes('open.kakao.com')) track('kakao_click', { location: where });
+  else if (href.includes('contact.html')) track('consult_button_click', { location: where, label: a.textContent.trim().slice(0, 30) });
+  else if (href.includes('youtube.com')) track('youtube_click', { location: where });
+});

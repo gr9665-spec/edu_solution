@@ -30,6 +30,7 @@ if (form) {
     setStatus('');
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { course: form.course.value });
       form.reset();
       setStatus('상담 신청이 접수되었습니다. 확인 후 순차적으로 답변드릴게요!', 'ok');
     } catch (err) {
