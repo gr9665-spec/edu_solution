@@ -286,3 +286,13 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
 @media (max-width:640px){.hero{padding-top:40px}.hero .chip{font-size:14px;padding:8px 16px}}
 
 @media (max-width:640px){.logo small,.logo b{font-size:20px}.logo-mark{width:32px;height:32px}.logo-mark svg{width:21px;height:21px}}
+
+/* 모바일 하단 고정 상담 버튼 */
+.mobile-cta{display:none}
+@media (max-width:640px){
+  body{padding-bottom:78px}
+  .mobile-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(36,36,58,.08)}
+  .mobile-cta a{flex:1;display:flex;align-items:center;justify-content:center;height:50px;border-radius:12px;font-weight:800;font-size:15.5px}
+  .mobile-cta .mc-kakao{background:#FEE500;color:#3A1D1D}
+  .mobile-cta .mc-apply{background:linear-gradient(135deg,var(--violet),var(--blue));color:#fff}
+}

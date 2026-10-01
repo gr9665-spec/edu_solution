@@ -31,7 +31,7 @@ if (form) {
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
       form.reset();
-      setStatus('상담 신청이 접수되었습니다. 확인 후 빠르게 연락드릴게요!', 'ok');
+      setStatus('상담 신청이 접수되었습니다. 확인 후 순차적으로 답변드릴게요!', 'ok');
     } catch (err) {
       console.error(err);
       setStatus('전송에 실패했습니다. 잠시 후 다시 시도하시거나 카카오톡으로 문의해 주세요.', 'error');

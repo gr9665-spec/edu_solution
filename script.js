@@ -19,3 +19,10 @@ if (bars.length) {
   bars.forEach(b => io.observe(b));
 }
 
+// 모바일 하단 고정 상담 버튼
+const KAKAO_URL = 'https://open.kakao.com/o/sZ5gefQi';
+const ctaBar = document.createElement('div');
+ctaBar.className = 'mobile-cta';
+ctaBar.innerHTML = '<a class="mc-kakao" href="' + KAKAO_URL + '" target="_blank" rel="noopener">💬 카톡 상담</a>'
+  + '<a class="mc-apply" href="contact.html">무료 상담 신청</a>';
+document.body.appendChild(ctaBar);
