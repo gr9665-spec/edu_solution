@@ -18,3 +18,4 @@ if (bars.length) {
   }, { threshold: 0.4 });
   bars.forEach(b => io.observe(b));
 }
+

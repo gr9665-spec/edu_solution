@@ -1,5 +1,5 @@
 /* ============================================
-   에듀솔루션 공용 스타일
+   학점은행제 정민쌤 공용 스타일
    팔레트: paper #FBFAFD / ink #24243A / violet #5B4B9E
            blue #3D5FC0 / lilac #EDEAF8 / line #DDD9EC
    서체: Gowun Batang(제목) + Pretendard(본문)
@@ -32,8 +32,9 @@ a{color:inherit;text-decoration:none}
 /* ---------- 헤더 ---------- */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,253,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-.logo{font-family:var(--display);font-weight:700;font-size:21px;color:var(--violet-deep);letter-spacing:-.01em}
-.logo span{color:var(--blue)}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--body);white-space:nowrap;line-height:1}
+.logo small{background:var(--violet-deep);color:#fff;font-size:14px;font-weight:800;letter-spacing:-.01em;padding:6px 10px;border-radius:7px}
+.logo b{font-size:26px;font-weight:900;color:var(--violet-deep);letter-spacing:-.04em}
 .gnb{display:flex;gap:6px;align-items:center}
 .gnb a{padding:8px 13px;border-radius:8px;font-size:15px;color:var(--sub);font-weight:500}
 .gnb a:hover{background:var(--lilac);color:var(--violet-deep)}
@@ -136,6 +137,9 @@ details .answer{padding:0 0 20px;color:var(--sub);font-size:15px}
 .side-card li{padding:9px 0;border-bottom:1px dashed rgba(91,75,158,.2)}
 .side-card li:last-child{border:0}
 .side-card li b{color:var(--violet-deep)}
+.form-status{margin-top:14px;font-size:14.5px;font-weight:700;min-height:1em}
+.form-status.ok{color:#1F7A4D}
+.form-status.error{color:#C0392B}
 .form-note{font-size:13px;color:var(--sub);margin-top:14px}
 
 /* ---------- CTA 배너 ---------- */
@@ -147,7 +151,9 @@ details .answer{padding:0 0 20px;color:var(--sub);font-size:15px}
 /* ---------- 푸터 ---------- */
 .site-footer{border-top:1px solid var(--line);padding:44px 0 52px;background:var(--white);margin-top:76px}
 .footer-inner{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:14px;color:var(--sub)}
-.footer-inner .logo{font-size:18px;margin-bottom:10px;display:block}
+.footer-inner .logo{margin-bottom:12px}
+.footer-inner .logo small{font-size:12.5px;padding:5px 9px}
+.footer-inner .logo b{font-size:22px}
 .footer-links{display:flex;gap:18px}
 .footer-links a:hover{color:var(--violet-deep)}
 .copyright{margin-top:8px;font-size:13px}
@@ -180,13 +186,9 @@ details .answer{padding:0 0 20px;color:var(--sub);font-size:15px}
 }
 
 /* ============================================
-   v2 추가 — 영문 로고 / 상담 카드 / 디자인 요소 강화
+   v2 추가 — 상담 카드 / 디자인 요소 강화
    ============================================ */
 
-/* 로고: 한·영 병기 */
-.logo{display:flex;flex-direction:column;line-height:1.12}
-.logo .en{font-family:var(--body);font-style:normal;font-size:9px;font-weight:700;letter-spacing:.32em;color:var(--sub);margin-top:2px}
-.site-footer .logo .en{font-size:8.5px}
 
 /* 본문 볼드 강조 색상 */
 p b, blockquote b, .lead b{color:var(--violet-deep)}
@@ -242,3 +244,27 @@ p b, blockquote b, .lead b{color:var(--violet-deep)}
   .stats{grid-template-columns:1fr;margin-top:40px}
   .chat-head .online{display:none}
 }
+
+/* 후기 → 카톡 캡처 보기 */
+.review-more{margin-top:auto;align-self:flex-start;background:#FEE500;color:#3A1D1D;border:0;border-radius:8px;padding:9px 14px;font-family:var(--body);font-size:13.5px;font-weight:700;cursor:pointer;transition:transform .15s ease}
+.review-more:hover{transform:translateY(-2px)}
+.kakao-modal{position:fixed;inset:0;z-index:100;background:rgba(20,18,40,.6);display:none;align-items:center;justify-content:center;padding:16px}
+.kakao-modal.open{display:flex}
+.kakao-box{background:#B2C7DA;border-radius:16px;width:100%;max-width:420px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.kakao-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--white);font-size:15px;color:var(--violet-deep)}
+.kakao-close{background:none;border:0;font-size:20px;color:var(--sub);cursor:pointer;line-height:1}
+.kakao-body{overflow-y:auto;padding:14px 12px 18px;display:flex;flex-direction:column;gap:10px}
+.kakao-body img{width:100%;height:auto;border-radius:10px;display:block}
+.kakao-note{background:var(--white);font-size:12px;color:var(--sub);padding:10px 18px;text-align:center}
+.kk-date{align-self:center;background:rgba(0,0,0,.14);color:#fff;font-size:11.5px;padding:4px 12px;border-radius:12px;margin:6px 0}
+.kk-row{display:flex;align-items:flex-end;gap:6px}
+.kk-row.me{justify-content:flex-end}
+.kk-row.them{align-items:flex-start;gap:8px}
+.kk-avatar{flex:none;width:38px;height:38px;border-radius:14px;background:#9BBBD4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DCE8F2'%3E%3Ccircle cx='12' cy='9' r='4'/%3E%3Cpath d='M4 20c0-4 4-6 8-6s8 2 8 6z'/%3E%3C/svg%3E") center/70% no-repeat}
+.kk-col{min-width:0;max-width:78%}
+.kk-name{font-size:12px;color:#3B4A5A;margin-bottom:4px}
+.kk-line{display:flex;align-items:flex-end;gap:6px}
+.kk-bubble{font-size:13.5px;line-height:1.55;padding:8px 11px;border-radius:12px;word-break:keep-all;overflow-wrap:anywhere;color:#1E1E1E}
+.kk-row.them .kk-bubble{background:#fff;border-top-left-radius:3px}
+.kk-row.me .kk-bubble{background:#FEE500;border-top-right-radius:3px;max-width:78%}
+.kk-time{flex:none;font-size:10.5px;color:#4E5D6C;white-space:nowrap}
